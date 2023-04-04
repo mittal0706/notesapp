@@ -12,8 +12,7 @@ agent any
     stage('Install dependencies') {
       agent {
         docker { 
-          image 'python:3.8-alpine'
-          args '-p 8000:8000'
+          image 'python'
         }
       }
         
