@@ -13,6 +13,7 @@ agent any
       agent {
         docker { 
           image 'python:3.8-alpine'
+          args '-p 8000:8000'
         }
       }
         
