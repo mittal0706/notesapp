@@ -9,12 +9,10 @@ agent any
         }
       }
     }
-    //stage('Build'){
-      //steps{
-       // script{
-          
-        //}
-      //}
-    //}
+    stage('Install dependencies') {
+            steps {
+                sh 'pip install -r requirements.txt' 
+            }
+        }
   }
 }
