@@ -4,9 +4,17 @@ agent any
     stage('Git checkout'){
       steps{
         script{
-          git branch: 'main', credentialsId: 'github', url: 'https://github.com/mittal0706/notesapp.git'
+          withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+          }
         }
       }
     }
+    //stage('Build'){
+      //steps{
+       // script{
+          
+        //}
+      //}
+    //}
   }
 }
