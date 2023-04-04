@@ -8,14 +8,15 @@ agent any
           }
         }
     }
-    stage('Install dependencies'){
-      steps{
-        script{
-          sh 'sudo apt install python3-pip'
-          sh 'sudo pip install -r requirements.txt'
-        }
-      }
-    
-    }
+    stage('Install dependencies') {
+           agent {
+              docker {
+                image 'python:3'
+                }
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+           }   
   }
+ }
 }
