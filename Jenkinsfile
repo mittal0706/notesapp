@@ -4,10 +4,9 @@ agent any
     stage('Git checkout'){
       steps{
         script{
-          withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+          git branch: 'main', url: 'https://github.com/mittal0706/notesapp.git'
           }
         }
-      }
     }
     stage('Install dependencies'){
       steps{
